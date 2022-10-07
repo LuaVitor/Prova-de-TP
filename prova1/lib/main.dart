@@ -1,7 +1,5 @@
-// Dose Diária Ideal de Cafeína
 // Nome: Luan Vitor Carvalho Valadares
-
-import 'dart:math';
+// Prova 1 de TP
 
 import 'package:flutter/material.dart';
 
@@ -29,7 +27,7 @@ class _HomeState extends State<Home>{
   bool vaccinated = false;
 
   String _calculate(){
-    double auxilio = 0.0;
+    double support = 0.0;
     double minimumWage = 1212.0;
 
     if(schooled == true && vaccinated == true){
@@ -37,26 +35,26 @@ class _HomeState extends State<Home>{
       if(double.parse(incomeController.text) <= (2 * minimumWage))
         if(double.parse(incomeController.text) <= minimumWage){
           if(double.parse(childrenController.text) <= 2){
-            auxilio = 2.5 * minimumWage;
+            support = 2.5 * minimumWage;
           }
 
         }else{
           if(double.parse(childrenController.text) <= 2){
-            auxilio = 1.5 * minimumWage;
+            support = 1.5 * minimumWage;
           }else if(double.parse(childrenController.text) >= 3){
-            auxilio = 3 * minimumWage;
+            support = 3 * minimumWage;
           }
         }
     }
 
     if(singleMother == true){
-      auxilio = auxilio + 600;
+      support = support + 600;
     }
 
-    if(auxilio == 0){
+    if(support == 0){
       return "Você não está em condições de receber um auxílio";
     }else{
-      return "Você receberá um auxílio de R\$$auxilio,00";
+      return "Você receberá um auxílio de R\$$support,00";
     }
   }
 
@@ -78,7 +76,7 @@ class _HomeState extends State<Home>{
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("Cálculo do Auxílio", style: TextStyle(fontWeight: FontWeight.bold ,fontSize: 32.0),),
+        title: Text("Cálculo do Auxílio", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32.0),),
         centerTitle: true,
         backgroundColor: Colors.teal[400],
 
@@ -169,7 +167,7 @@ class _HomeState extends State<Home>{
                   validator: (value){
                     if(value.toString().isEmpty){
                       return "Por favor, insira o número de filhos da família";
-                    }else if(double.parse(value.toString()) <= 0 || double.parse(value.toString()) == null){
+                    }else if(double.parse(value.toString()) < 0 || double.parse(value.toString()) == null){
                       return "Por favor, digite um valor válido";
                     }
                   },
