@@ -33,18 +33,17 @@ class _HomeState extends State<Home>{
     if(schooled == true && vaccinated == true){
 
       if(double.parse(incomeController.text) <= (2 * minimumWage))
-        if(double.parse(incomeController.text) <= minimumWage){
-          if(double.parse(childrenController.text) <= 2){
-            support = 2.5 * minimumWage;
-          }
-
-        }else{
-          if(double.parse(childrenController.text) <= 2){
-            support = 1.5 * minimumWage;
-          }else if(double.parse(childrenController.text) >= 3){
-            support = 3 * minimumWage;
-          }
+        if(double.parse(childrenController.text) <= 2){
+          support = 1.5 * minimumWage;
+        }else if(double.parse(childrenController.text) >= 3){
+          support = 3 * minimumWage;
         }
+        
+      if(double.parse(incomeController.text) <= minimumWage){
+        if(double.parse(childrenController.text) <= 2){
+          support = 2.5 * minimumWage;
+        }
+      }
     }
 
     if(singleMother == true){

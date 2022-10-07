@@ -1,9 +1,9 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/home/aluno/flutter/flutter_linux_3.3.1-stable/flutter"
-export "FLUTTER_APPLICATION_PATH=/home/aluno/StudioProjects/prova1"
+export "FLUTTER_ROOT=C:\Program Files\flutter"
+export "FLUTTER_APPLICATION_PATH=C:\Users\luanv\StudioProjects\cafezinho"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=lib/main.dart"
+export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
